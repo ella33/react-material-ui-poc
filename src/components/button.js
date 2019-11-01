@@ -48,4 +48,4 @@ SbyButton.defaultProps = {
   size: 'normal',
 };
 
-export default SbyButton;
+export default React.memo(SbyButton);

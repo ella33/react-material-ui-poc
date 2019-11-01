@@ -1,9 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-
-const colors = {
-  primary: '#0EA937',
-  secondary: '#C3C3C3'
-};
+import colors from './colors';
+import radioStyles from './radio';
+import dropdownStyles from './dropdown';
 
 const theme = createMuiTheme({
   spacing: 5,
@@ -17,6 +15,14 @@ const theme = createMuiTheme({
       main: colors.secondary,
       contrastText: '#616161',
     }
+  },
+  overrides: {
+    MuiRadio: {
+      ...radioStyles,
+    },
+    MuiSelect: {
+      ...dropdownStyles,
+    },
   },
 });
 
