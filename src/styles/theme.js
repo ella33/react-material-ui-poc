@@ -17,6 +17,16 @@ const theme = createMuiTheme({
     }
   },
   overrides: {
+    MuiAppBar: {
+      root: {
+        backgroundColor: 'transparent',
+      },
+    },
+    MuiContainer: {
+      root: {
+        paddingTop: 65,
+      },
+    },
     MuiRadio: {
       ...radioStyles,
     },
