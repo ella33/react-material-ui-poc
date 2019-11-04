@@ -1,11 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-
-const colors = {
-  primary: '#0EA937',
-  secondary: '#C3C3C3',
-  lightGrey: 'rgba(0, 0, 0, 0.33)',
-  darkGrey: '#616161',
-};
+import colors from './colors';
+import radioStyles from './radio';
+import dropdownStyles from './dropdown';
 
 const inputColor = colors.lightGrey;
 
@@ -26,11 +22,11 @@ const theme = createMuiTheme({
   },
   overrides: {
     MuiOutlinedInput: {
-      focused: {
-        borderColor: colors.primary,
-        caretColor: colors.primary,
-      },
       root: {
+        '&$focused': {
+          borderColor: colors.primary,
+          caretColor: colors.primary,
+        },
         '&:hover $notchedOutline': {
           borderColor: inputColor,
         },
@@ -53,6 +49,22 @@ const theme = createMuiTheme({
       root: {
         color: inputColor,
       },
+    },
+    MuiAppBar: {
+      root: {
+        backgroundColor: 'transparent',
+      },
+    },
+    MuiContainer: {
+      root: {
+        paddingTop: 65,
+      },
+    },
+    MuiRadio: {
+      ...radioStyles,
+    },
+    MuiSelect: {
+      ...dropdownStyles,
     },
   },
 });

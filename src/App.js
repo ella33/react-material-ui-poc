@@ -1,17 +1,28 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 import { ThemeProvider } from '@material-ui/styles';
-import Box from '@material-ui/core/Box';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import CheckBoxIcon from '@material-ui/icons/CheckBox';
-import SbyButton from './components/button';
-import theme from './styles/theme';
+
+import SbyLayout from 'components/shared/layout';
+import Home from 'pages/home';
+import theme from 'styles/theme';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Box m={2}>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <SbyLayout>
+          <Switch>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </SbyLayout>
+      </ThemeProvider>
+      {/* <Box m={2}>
         <SbyButton variant="contained" size="xs">xs</SbyButton>
         <SbyButton variant="contained" size="sm">sm</SbyButton>
         <SbyButton variant="contained">normal</SbyButton>
@@ -36,33 +47,15 @@ function App() {
       </Box>
 
       <Box m={2}>
-        <OutlinedInput placeholder="Bare" variant="outlined" />
-        <OutlinedInput defaultValue="Type" disabled={true} placeholder="Bare" variant="outlined" />
+        <SbyRadio label="Active" value="active" checked />
+        <SbyRadio label="Normal" value="normal" />
       </Box>
 
       <Box m={2}>
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={true}
-              value="checkedB"
-              color="primary"
-            />
-          }
-          label="Active"
-        />
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={false}
-              value="checkedB"
-              color="primary"
-            />
-          }
-          label="Normal"
-        />
-      </Box>
-    </ThemeProvider>
+        <SbyDropdown id="sby-multiple-dropdown" multiple={true} values={[{ value: 10, label: 'Ten' }, { value: 20, label: 'Twenty' }]} />
+        <SbyDropdown id="sby-simple-dropdown" values={[{ value: 10, label: 'Ten' }, { value: 20, label: 'Twenty' }]} />
+      </Box> */}
+    </Router>
   );
 }
 
