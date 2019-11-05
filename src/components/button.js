@@ -25,15 +25,14 @@ const styled = props => withStyles({
   },
   label: {
     fontSize: `${buttonSize[props.size]}px`,
-    textTransform: 'uppercase',
   },
 })(Button);
 
 const SbyButton = ({ size, children, ...rest }) => {
   const StyledButton = styled({ size });
   return (
-    <StyledButton {...rest}>{
-      children}
+    <StyledButton {...rest}>
+      {children}
     </StyledButton>
   );
 };

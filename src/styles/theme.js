@@ -1,9 +1,9 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 import colors from './colors';
+import checkboxStyles from './checkbox';
+import inputStyles from './input';
 import radioStyles from './radio';
 import dropdownStyles from './dropdown';
-
-const inputColor = colors.lightGrey;
 
 const spacingBaseUnit = 5;
 
@@ -22,33 +22,10 @@ const theme = createMuiTheme({
   },
   overrides: {
     MuiOutlinedInput: {
-      root: {
-        '&$focused': {
-          borderColor: colors.primary,
-          caretColor: colors.primary,
-        },
-        '&:hover $notchedOutline': {
-          borderColor: inputColor,
-        },
-      },
-      input: {
-        color: colors.darkGrey,
-        padding: `${2*spacingBaseUnit}px`,
-        '&::placeholder': {
-          color: inputColor,
-        },
-        '&:focus': {
-          color: colors.primary,
-        },
-        '&:disabled': {
-          backgroundColor: colors.secondary,
-        }
-      },
+      ...inputStyles,
     },
     MuiCheckbox: {
-      root: {
-        color: inputColor,
-      },
+      ...checkboxStyles,
     },
     MuiAppBar: {
       root: {
@@ -69,4 +46,4 @@ const theme = createMuiTheme({
   },
 });
 
-export default theme;
+export default responsiveFontSizes(theme);
