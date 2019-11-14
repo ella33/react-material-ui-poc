@@ -32,11 +32,6 @@ const theme = createMuiTheme({
         backgroundColor: 'transparent',
       },
     },
-    MuiContainer: {
-      root: {
-        paddingTop: 65,
-      },
-    },
     MuiRadio: {
       ...radioStyles,
     },

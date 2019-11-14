@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import styled from 'styled-components';
 
 import Button from '@material-ui/core/Button';
 
@@ -13,17 +14,22 @@ const SignOut = withStyles({
   },
 })(Button);
 
+const UserToolbar = styled(Grid)`
+  align-items: center;
+  display: flex;
+`;
+
 const SbyHeader = ({ user }) => (
-  <AppBar position="fixed" color="inherit">
+  <AppBar position="sticky" color="inherit">
     <Toolbar>
       <Grid container direction="row" justify="space-between" alignItems="center">
         <img src="logo.png" alt="sobeys" />
-        <Grid container item>
+        <UserToolbar item>
           <Typography>{`Welcome, ${user.name}`}</Typography>
           <SignOut color="primary">
             <Typography>Sign Out</Typography>
           </SignOut>
-        </Grid>
+        </UserToolbar>
       </Grid>
     </Toolbar>
   </AppBar>

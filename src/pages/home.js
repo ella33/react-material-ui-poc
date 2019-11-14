@@ -4,13 +4,14 @@ import SbyButton from 'components/button';
 
 const Home = (props) => {
   return (
-    <Box m={2}>
+    <Box>
       <SbyButton variant="contained" size="xs">xs</SbyButton>
       <SbyButton variant="contained" size="sm">sm</SbyButton>
       <SbyButton variant="contained">normal</SbyButton>
       <SbyButton variant="contained" size="lg">lg</SbyButton>
       <SbyButton variant="contained">work on your next listing</SbyButton>
     </Box>
+
   );
 };
 

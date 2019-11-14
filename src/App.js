@@ -5,6 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import { ThemeProvider } from '@material-ui/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 import SbyLayout from 'components/shared/layout';
 import Home from 'pages/home';
@@ -13,6 +14,7 @@ import theme from 'styles/theme';
 function App() {
   return (
     <Router>
+      <CssBaseline />
       <ThemeProvider theme={theme}>
         <SbyLayout>
           <Switch>
