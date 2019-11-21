@@ -29,7 +29,7 @@ const theme = createMuiTheme({
     },
     MuiAppBar: {
       root: {
-        backgroundColor: 'transparent',
+        backgroundColor: '#FFF',
       },
     },
     MuiRadio: {
