@@ -18,7 +18,10 @@ const theme = createMuiTheme({
     secondary: {
       main: colors.secondary,
       contrastText: '#616161',
-    }
+    },
+    background: {
+      default: '#505151',
+    },
   },
   overrides: {
     MuiOutlinedInput: {
