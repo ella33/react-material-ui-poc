@@ -4,6 +4,7 @@ import checkboxStyles from './checkbox';
 import inputStyles from './input';
 import radioStyles from './radio';
 import dropdownStyles from './dropdown';
+import { tableHead, tableCell } from './table';
 
 const spacingBaseUnit = 5;
 
@@ -41,6 +42,17 @@ const theme = createMuiTheme({
     MuiSelect: {
       ...dropdownStyles,
     },
+    MuiTableHead: { 
+      ...tableHead,
+    },
+    MuiTableCell: {
+      ...tableCell,
+    },
+    // MuiFormControlLabel: {
+    //   label: {
+    //     width: '210px',
+    //   },
+    // },
   },
 });
 

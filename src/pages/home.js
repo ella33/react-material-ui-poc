@@ -1,42 +1,57 @@
 import React from 'react';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
+import Box from '@material-ui/core/Box';
+import ReplayIcon from '@material-ui/icons/Replay';
 
+import SbyActionBar, { ActionGroup } from '../components/shared/actionBar';
+import SbySubheader from '../components/shared/subheader';
+import { SbyTable, SbyTableHead, SbyTableBody, SbyTableRow, SbyTableCell } from '../components/table';
 import SbyPaper from '../components/paper';
+import SbyButton from '../components/button';
 
 const Home = ({ listings }) => {
   return (
-    <SbyPaper>
-      <Table aria-label="Listings table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Upc</TableCell>
-            <TableCell>Description</TableCell>
-            <TableCell>Cm#</TableCell>
-            <TableCell>Time</TableCell>
-            <TableCell>Status</TableCell>
-            <TableCell>Reason</TableCell>
-            <TableCell>Action</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {listings.map(listing => (
-            <TableRow key={listing.id}>
-              <TableCell>{listing.upc}</TableCell>
-              <TableCell>{listing.description}</TableCell>
-              <TableCell>{listing.cm}</TableCell>
-              <TableCell>{listing.time}</TableCell>
-              <TableCell>{listing.status}</TableCell>
-              <TableCell>{listing.reason}</TableCell>
-              <TableCell>RESUME</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </SbyPaper>
+    <>
+      <SbyActionBar>
+        <div>Hello, John!</div>
+        <ActionGroup>
+          <SbyButton variant="contained">Work on your next listing</SbyButton>
+        </ActionGroup>
+      </SbyActionBar>
+      <SbySubheader>
+        Your dashboard
+      </SbySubheader>
+      <SbyPaper>
+        <Box m={4}>
+          <SbyTable aria-label="Listings table">
+            <SbyTableHead>
+              <SbyTableRow>
+                <SbyTableCell>Upc</SbyTableCell>
+                <SbyTableCell>Description</SbyTableCell>
+                <SbyTableCell>Cm#</SbyTableCell>
+                <SbyTableCell>Time</SbyTableCell>
+                <SbyTableCell>Status</SbyTableCell>
+                <SbyTableCell>Reason</SbyTableCell>
+                <SbyTableCell>Action</SbyTableCell>
+              </SbyTableRow>
+            </SbyTableHead>
+
+            <SbyTableBody>
+              {listings.map(listing => (
+                <SbyTableRow key={listing.id}>
+                  <SbyTableCell>{listing.upc}</SbyTableCell>
+                  <SbyTableCell>{listing.description}</SbyTableCell>
+                  <SbyTableCell>{listing.cm}</SbyTableCell>
+                  <SbyTableCell>{listing.time}</SbyTableCell>
+                  <SbyTableCell>{listing.status}</SbyTableCell>
+                  <SbyTableCell>{listing.reason}</SbyTableCell>
+                  <SbyTableCell><ReplayIcon />RESUME</SbyTableCell>
+                </SbyTableRow>
+              ))}
+            </SbyTableBody>
+          </SbyTable>
+        </Box>
+      </SbyPaper>
+    </>
   );
 };
 

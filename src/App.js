@@ -9,6 +9,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 import SbyLayout from 'components/shared/layout';
 import Home from 'pages/home';
+import Listing from 'pages/listing';
 import theme from 'styles/theme';
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <SbyLayout>
           <Switch>
+            <Route path="/listing">
+              <Listing />
+            </Route>
             <Route path="/">
               <Home />
             </Route>

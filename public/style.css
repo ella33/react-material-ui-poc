@@ -4,9 +4,9 @@ html {
 
 .appBody {
 	height: 100%;
+	background: #505151;
 }
 
 .root {
-  display: flex;
-  height: 100%;
+	height: 100%;
 }
