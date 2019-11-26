@@ -15,7 +15,12 @@ export const tableCell = {
 		border: '1px solid #DADADA',
 	},
 	sizeSmall: {
-		padding: '3px',
-		width: 'auto',
+		padding: 3,
+		'&:last-child': {
+			paddingRight: 3,
+		},
+		'&.MuiTableCell-head': {
+			padding: '10px 0',
+		}
 	},
 };

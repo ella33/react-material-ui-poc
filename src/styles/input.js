@@ -1,10 +1,8 @@
 import colors from './colors';
 
-const width = 180;
-
 const styles = {
   root: {
-    width,
+    width: '100%',
     '&$focused': {
       borderColor: colors.primary,
       caretColor: colors.primary,

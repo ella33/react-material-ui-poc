@@ -8,8 +8,9 @@ import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import SbyLayout from 'components/shared/layout';
-import Home from 'pages/home';
-import Listing from 'pages/listing';
+import Home from 'pages/home/home';
+import Listing from 'pages/listing/listing';
+import NewListing from 'pages/new-listing/newListing';
 import theme from 'styles/theme';
 
 function App() {
@@ -22,6 +23,11 @@ function App() {
             <Route path="/listing">
               <Listing />
             </Route>
+
+            <Route path="/new-listing">
+              <NewListing />
+            </Route>
+
             <Route path="/">
               <Home />
             </Route>

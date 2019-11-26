@@ -4,6 +4,7 @@ import checkboxStyles from './checkbox';
 import inputStyles from './input';
 import radioStyles from './radio';
 import dropdownStyles from './dropdown';
+import toggleButtonStyles from './toggleButton';
 import { tableHead, tableCell } from './table';
 
 const spacingBaseUnit = 5;
@@ -25,16 +26,16 @@ const theme = createMuiTheme({
     },
   },
   overrides: {
+    MuiAppBar: {
+      root: {
+        backgroundColor: '#FFF',
+      },
+    },
     MuiOutlinedInput: {
       ...inputStyles,
     },
     MuiCheckbox: {
       ...checkboxStyles,
-    },
-    MuiAppBar: {
-      root: {
-        backgroundColor: '#FFF',
-      },
     },
     MuiRadio: {
       ...radioStyles,
@@ -42,17 +43,15 @@ const theme = createMuiTheme({
     MuiSelect: {
       ...dropdownStyles,
     },
-    MuiTableHead: { 
+    MuiTableHead: {
       ...tableHead,
     },
     MuiTableCell: {
       ...tableCell,
     },
-    // MuiFormControlLabel: {
-    //   label: {
-    //     width: '210px',
-    //   },
-    // },
+    MuiToggleButtonGroup: {
+      ...toggleButtonStyles,
+    },
   },
 });
 

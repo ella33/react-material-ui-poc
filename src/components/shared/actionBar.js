@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from '@material-ui/core/styles';
 
-import colors from '../../styles/colors';
+import colors from 'styles/colors';
 
 const ActionBar = styled('div')(({ theme }) => ({
 	alignItems: 'center',

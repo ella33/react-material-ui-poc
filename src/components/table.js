@@ -11,26 +11,26 @@ export const SbyTable = ({ children, ...rest }) => (
 	</Table>
 );
 
-export const SbyTableHead = ({ children }) => (
-	<TableHead component="div">
+export const SbyTableHead = ({ children, ...rest }) => (
+	<TableHead component="div" {...rest}>
 		{children}
 	</TableHead>
 );
 
-export const SbyTableBody = ({ children }) => (
-	<TableBody component="div">
+export const SbyTableBody = ({ children, ...rest }) => (
+	<TableBody component="div" {...rest}>
 		{children}
 	</TableBody>
 );
 
-export const SbyTableRow = ({ children }) => (
-	<TableRow component="div">
+export const SbyTableRow = ({ children, ...rest }) => (
+	<TableRow component="div" {...rest}>
 		{children}
 	</TableRow>
 );
 
-export const SbyTableCell = ({ children }) => (
-	<TableCell component="div">
+export const SbyTableCell = ({ children, ...rest }) => (
+	<TableCell component="div" {...rest}>
 		{children}
 	</TableCell>
 );

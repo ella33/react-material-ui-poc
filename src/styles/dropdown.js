@@ -1,10 +1,8 @@
 import colors from './colors';
 
-const width = 180;
-
 const styles = {
   root: {
-    width,
+    width: '100%',
     padding: 10,
   },
   icon: {
