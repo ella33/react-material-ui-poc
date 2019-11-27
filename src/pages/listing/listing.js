@@ -10,6 +10,7 @@ import SbyButton from 'components/button';
 import SbyDropdown from 'components/dropdown';
 import SbyRadio from 'components/radio';
 import { SbyTableHead, SbyTableBody, SbyTableRow, SbyTableCell } from 'components/table';
+import SbyLabel from 'components/label';
 import { SbyRadioGroup } from 'styles/form';
 
 import { SitesTable, ListingFormFieldGroup } from './style';
@@ -38,36 +39,32 @@ const Listing = () => (
 				<Grid container spacing={3} justify="center">
 	        <Grid item xs>
 	          <ListingFormFieldGroup
-		          control={<SbyDropdown values={[{ value: 'single', label: '00-Single article' }]} />}
-		          label="Article Category"
+		          control={<SbyDropdown required={true} values={[{ value: 'single', label: '00-Single article' }]} />}
+              label={<SbyLabel text="Article Category" />}
 		          labelPlacement="start"
-		          required={true}
-		        />
+            />
 		        <ListingFormFieldGroup
-		          control={<OutlinedInput value="42-02-17" />}
-		          label="Merchandise Category"
+		          control={<OutlinedInput error defaultValue="42-02-17" required={true} />}
+              label={<SbyLabel text="Merchandise Category" />}
 		          labelPlacement="start"
-		          required={true}
-		        />
+            />
 		        <ListingFormFieldGroup
-		          control={<SbyDropdown inputProps={{placeholder:"Please select"}} values={[{ value: 'single', label: '00-Single article' }]} />}
-		          label="Valuation Class"
+		          control={<SbyDropdown required={true} inputProps={{placeholder:"Please select"}} values={[{ value: 'single', label: '00-Single article' }]} />}
+              label={<SbyLabel text="Article Category" />}
 		          labelPlacement="start"
 		          required={true}
-		        />
+              />
 		        <ListingFormFieldGroup
 		          control={<RetailUnitOptions />}
-		          label="Retail Selling Unit"
+              label={<SbyLabel text="Retail Selling Unit" />}
 		          labelPlacement="start"
-		          required={true}
-		        />
+              />
 	        </Grid>
 	        <Grid item xs>
 	          <ListingFormFieldGroup
-		          control={<OutlinedInput value="7518" />}
-		          label="Category Merchant Number"
+		          control={<OutlinedInput defaultValue="7518" />}
+              label={<SbyLabel text="Category Merchant Number" />}
 		          labelPlacement="start"
-		          required={true}
 		        />
 		        <SitesTable size="small">
 		        	<SbyTableHead>
@@ -81,15 +78,15 @@ const Listing = () => (
 		        	<SbyTableBody>
 		        		<SbyTableRow>
 		        			<SbyTableCell>ADG</SbyTableCell>
-		        			<SbyTableCell><OutlinedInput value="01" /></SbyTableCell>
-		        			<SbyTableCell><OutlinedInput value="017" /></SbyTableCell>
-		        			<SbyTableCell><OutlinedInput value="007" /></SbyTableCell>
+		        			<SbyTableCell><OutlinedInput defaultValue="01" /></SbyTableCell>
+		        			<SbyTableCell><OutlinedInput defaultValue="017" /></SbyTableCell>
+		        			<SbyTableCell><OutlinedInput defaultValue="007" /></SbyTableCell>
 		        		</SbyTableRow>
 		        		<SbyTableRow>
 		        			<SbyTableCell>ADG</SbyTableCell>
-		        			<SbyTableCell><OutlinedInput value="02" /></SbyTableCell>
-		        			<SbyTableCell><OutlinedInput value="052" /></SbyTableCell>
-		        			<SbyTableCell><OutlinedInput value="052" /></SbyTableCell>
+		        			<SbyTableCell><OutlinedInput defaultValue="02" /></SbyTableCell>
+		        			<SbyTableCell><OutlinedInput defaultValue="052" /></SbyTableCell>
+		        			<SbyTableCell><OutlinedInput defaultValue="052" /></SbyTableCell>
 		        		</SbyTableRow>
 		        		<SbyTableRow>
 		        			<SbyTableCell>ADG</SbyTableCell>

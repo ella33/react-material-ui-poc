@@ -9,22 +9,8 @@ export const SbyFormFieldGroup = styled(FormControlLabel)(({ required }) => {
 			width: '100%',
 		},
 		'& > .MuiFormControlLabel-label': {
-			position: 'relative',
 			width: 240,
-			'&:before': {
-				alignItems: 'center',
-				color: '#D12436',
-				content: '\'\\2605\'',
-				display: 'inline-flex',
-				fontSize: 10,
-				height: '100%',
-				left: -15,
-				position: 'absolute',
-				top: 0,
-				width: 10,
-				opacity: required ? 1 : 0,
-			},
-		}
+		},
 	};
 });
 

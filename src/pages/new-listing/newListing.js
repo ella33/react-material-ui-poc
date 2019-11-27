@@ -7,6 +7,7 @@ import OutlinedInput from '@material-ui/core/outlinedInput';
 
 import SbyActionBar from 'components/shared/actionBar';
 import SbyPaper from 'components/paper';
+import SbyLabel from 'components/label';
 
 import { NewListingFormFieldGroup } from './style';
 
@@ -29,31 +30,27 @@ const NewListing = () => (
         <Grid container spacing={3} alignItems="flex-start" direction="column">
           <NewListingFormFieldGroup
             control={<SbyToggleButtons size="small" value={0} exclusive items={['Grocery', 'Fresh']} />}
-            label="Article Type"
+            label={<SbyLabel text="Article Type" />}
             labelPlacement="start"
-            required={true}
-          />
+            />
           <NewListingFormFieldGroup
             control={<SbyToggleButtons size="small" value={0} exclusive items={['RSC/Warehouse', 'Direct to Store']} />}
-            label="Source Type"
+            label={<SbyLabel text="Source Type" />}
             labelPlacement="start"
-            required={true}
-          />
+            />
           <NewListingFormFieldGroup
             control={<SbyToggleButtons size="small" value={0} exclusive items={['Single Flavour', 'Multiple Flavours']} />}
-            label="Listing Type"
+            label={<SbyLabel text="Listing Type" />}
             labelPlacement="start"
-            required={true}
-          />
+            />
           <NewListingFormFieldGroup
             control={<OutlinedInput />}
-            label="UPC"
+            label={<SbyLabel text="UPC" />}
             labelPlacement="start"
-            required={true}
-          />
+            />
           <NewListingFormFieldGroup
             control={<OutlinedInput />}
-            label="Like Article Number"
+            label={<SbyLabel text="Like Article Number" required={false} />}
             labelPlacement="start"
           />
         </Grid>
