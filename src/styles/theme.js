@@ -5,14 +5,21 @@ import inputStyles from './input';
 import radioStyles from './radio';
 import dropdownStyles from './dropdown';
 import toggleButtonStyles from './toggleButton';
+import linkStyles from './link';
 import { tableHead, tableCell } from './table';
 
 const spacingBaseUnit = 5;
 
 const theme = createMuiTheme({
   spacing: spacingBaseUnit,
+  typography: {
+    fontSize: 13,
+  },
   palette: {
     type: 'light',
+    text: {
+      primary: '#505151',
+    },
     primary: {
       main: colors.primary,
       contrastText: '#FFF',
@@ -29,6 +36,11 @@ const theme = createMuiTheme({
     MuiAppBar: {
       root: {
         backgroundColor: '#FFF',
+      },
+    },
+    MuiFormControl: {
+      root: {
+        flex: 1,
       },
     },
     MuiOutlinedInput: {
@@ -51,6 +63,9 @@ const theme = createMuiTheme({
     },
     MuiToggleButtonGroup: {
       ...toggleButtonStyles,
+    },
+    MuiLink: {
+      ...linkStyles,
     },
   },
 });

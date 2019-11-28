@@ -1,9 +1,17 @@
 import { styled } from '@material-ui/core/styles';
 
-import { SbyFormFieldGroup } from 'styles/form';
+import { SbyFieldGroup } from 'styles/form';
 
-export const NewListingFormFieldGroup = styled(SbyFormFieldGroup)({
+export const NewListingFieldGroup = styled(SbyFieldGroup)({
   '& > *:first-child': {
-    width: 300,
+    width: 228,
   },
+});
+
+export const NewListingFieldWithValidation= styled('div')({
+  alignItems: 'baseline',
+  display: 'grid',
+  gridAutoColumns: 'auto',
+  gridAutoFlow: 'column',
+	gridColumnGap: 10,
 });

@@ -1,7 +1,7 @@
 import { styled } from '@material-ui/core/styles';
 
 import { SbyTable } from 'components/table';
-import { SbyFormFieldGroup } from 'styles/form';
+import { SbyFieldGroup } from 'styles/form';
 
 export const SitesTable = styled(SbyTable)({
 	width: 'auto',
@@ -12,10 +12,22 @@ export const SitesTable = styled(SbyTable)({
 		textAlign: 'center',
 		width: 70,
 	},
+	'& .MuiOutlinedInput-notchedOutline': {
+		borderStyle: 'dotted',
+	},
 });
 
-export const ListingFormFieldGroup = styled(SbyFormFieldGroup)({
-  '& .MuiOutlinedInput-root': {
-    width: 180,
+export const ListingFieldGroup = styled(SbyFieldGroup)({
+  '& .MuiInputBase-root': {
+    width: 210,
   },
+});
+
+export const ListingArticleHierarchy = styled('div')({
+	display: 'grid',
+	gridTemplateColumns: '50px 153px',
+	gridColumnGap: 7,
+	'& .MuiInputBase-root': {
+		width: 'inherit',
+	},
 });

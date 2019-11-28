@@ -1,6 +1,7 @@
 import React from 'react';
 import { styled } from '@material-ui/core/styles';
 import SbyHeader from './header';
+import SbyFooter from './footer';
 
 const Main = styled('div')({
   display: 'flex',
@@ -21,6 +22,7 @@ const SbyLayout = ({ children }) => (
     <Content>
       {children}
     </Content>
+    <SbyFooter />
   </Main>
 );
 
