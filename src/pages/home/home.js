@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
+import { withRouter } from 'react-router-dom'
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 import ReplayIcon from '@material-ui/icons/Replay';
+import TableSortLabel from '@material-ui/core/TableSortLabel';
 
 import SbyActionBar, { ActionGroup } from 'components/shared/actionBar';
 import SbySubheader from 'components/shared/subheader';
@@ -8,13 +11,33 @@ import { SbyTable, SbyTableHead, SbyTableBody, SbyTableRow, SbyTableCell } from 
 import SbyPaper from 'components/paper';
 import SbyButton from 'components/button';
 
-const Home = ({ listings }) => {
+const Home = ({ listings, history }) => {
+  const [orderBy, setOrderBy] = useState('');
+  const [order, setOrder] = useState('asc');
+  const goToNewListing = useCallback(() => {
+    history.push('/new-listing');
+  }, [history]);
+
+  const resumeListing = useCallback(() => {
+    history.push('/listing');
+  }, [history]);
+
+  const tableHeaders = [
+    { id: 0, label: 'Upc' },
+    { id: 1, label: 'Description' },
+    { id: 2, label: 'Cm#' },
+    { id: 3, label: 'Time' },
+    { id: 4, label: 'Status' },
+    { id: 5, label: 'Reason' },
+    { id: 6, label: 'Action' },
+  ];
+
   return (
     <>
       <SbyActionBar>
         <div>Hello, John!</div>
         <ActionGroup>
-          <SbyButton variant="contained">Work on your next listing</SbyButton>
+          <SbyButton variant="contained" onClick={goToNewListing}>Work on your next listing</SbyButton>
         </ActionGroup>
       </SbyActionBar>
 
@@ -25,13 +48,20 @@ const Home = ({ listings }) => {
           <SbyTable aria-label="Listings table">
             <SbyTableHead>
               <SbyTableRow>
-                <SbyTableCell>Upc</SbyTableCell>
-                <SbyTableCell>Description</SbyTableCell>
-                <SbyTableCell>Cm#</SbyTableCell>
-                <SbyTableCell>Time</SbyTableCell>
-                <SbyTableCell>Status</SbyTableCell>
-                <SbyTableCell>Reason</SbyTableCell>
-                <SbyTableCell>Action</SbyTableCell>
+                {tableHeaders.map(({ id, label }) => (
+                  <SbyTableCell
+                    key={id}
+                    sortDirection={orderBy === id ? order : false}
+                  >
+                    <TableSortLabel
+                      active={orderBy === id}
+                      direction={order}
+                      onClick={() => { console.log('youu') }}
+                    >
+                      {label}
+                    </TableSortLabel>
+                  </SbyTableCell>
+                ))}
               </SbyTableRow>
             </SbyTableHead>
 
@@ -44,7 +74,7 @@ const Home = ({ listings }) => {
                   <SbyTableCell>{listing.time}</SbyTableCell>
                   <SbyTableCell>{listing.status}</SbyTableCell>
                   <SbyTableCell>{listing.reason}</SbyTableCell>
-                  <SbyTableCell><ReplayIcon />RESUME</SbyTableCell>
+                  <SbyTableCell><Button color="primary" onClick={resumeListing}><ReplayIcon />RESUME</Button></SbyTableCell>
                 </SbyTableRow>
               ))}
             </SbyTableBody>
@@ -67,4 +97,4 @@ Home.defaultProps = {
   })),
 };
 
-export default React.memo(Home);
+export default withRouter(React.memo(Home));

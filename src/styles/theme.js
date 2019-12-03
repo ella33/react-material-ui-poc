@@ -12,9 +12,6 @@ const spacingBaseUnit = 5;
 
 const theme = createMuiTheme({
   spacing: spacingBaseUnit,
-  typography: {
-    fontSize: 13,
-  },
   palette: {
     type: 'light',
     text: {

@@ -15,6 +15,7 @@ const styles = {
     },
     '& .MuiButtonBase-root': {
       color: 'inherit',
+      fontWeight: 400,
     }
   },
 };

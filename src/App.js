@@ -34,39 +34,6 @@ function App() {
           </Switch>
         </SbyLayout>
       </ThemeProvider>
-      {/* <Box m={2}>
-        <SbyButton variant="contained" size="xs">xs</SbyButton>
-        <SbyButton variant="contained" size="sm">sm</SbyButton>
-        <SbyButton variant="contained">normal</SbyButton>
-        <SbyButton variant="contained" size="lg">lg</SbyButton>
-        <SbyButton variant="contained">work on your next listing</SbyButton>
-      </Box>
-
-      <Box m={2}>
-        <SbyButton variant="outlined" size="xs">xs</SbyButton>
-        <SbyButton variant="outlined" size="sm">sm</SbyButton>
-        <SbyButton variant="outlined">normal</SbyButton>
-        <SbyButton variant="outlined" size="lg">lg</SbyButton>
-        <SbyButton variant="outlined">work on your next listing</SbyButton>
-      </Box>
-
-      <Box m={2}>
-        <SbyButton variant="contained" color="secondary" size="xs">xs</SbyButton>
-        <SbyButton variant="contained" color="secondary" size="sm">sm</SbyButton>
-        <SbyButton variant="contained" color="secondary">normal</SbyButton>
-        <SbyButton variant="contained" color="secondary" size="lg">lg</SbyButton>
-        <SbyButton variant="contained" color="secondary">work on your next listing</SbyButton>
-      </Box>
-
-      <Box m={2}>
-        <SbyRadio label="Active" value="active" checked />
-        <SbyRadio label="Normal" value="normal" />
-      </Box>
-
-      <Box m={2}>
-        <SbyDropdown id="sby-multiple-dropdown" multiple={true} values={[{ value: 10, label: 'Ten' }, { value: 20, label: 'Twenty' }]} />
-        <SbyDropdown id="sby-simple-dropdown" values={[{ value: 10, label: 'Ten' }, { value: 20, label: 'Twenty' }]} />
-      </Box> */}
     </Router>
   );
 }

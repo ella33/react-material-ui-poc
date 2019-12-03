@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
 import { styled } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -23,9 +24,10 @@ const SbyHeader = ({ user }) => (
   <AppBar position="sticky" color="inherit">
     <Toolbar>
       <Grid container direction="row" justify="space-between" alignItems="center">
-        <img src="logo.png" alt="sobeys" />
+        <Link to="/"><img src="logo.png" alt="sobeys" /></Link>
         <UserToolbar item>
-          <Typography>{`Welcome, ${user.name}`}</Typography>
+          <Typography mr={1}>{`Welcome, ${user.name}`}</Typography>
+          |
           <SignOut color="primary">
             <Typography>Sign Out</Typography>
           </SignOut>

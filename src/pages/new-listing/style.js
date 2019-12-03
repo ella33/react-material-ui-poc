@@ -4,7 +4,7 @@ import { SbyFieldGroup } from 'styles/form';
 
 export const NewListingFieldGroup = styled(SbyFieldGroup)({
   '& > *:first-child': {
-    width: 228,
+    width: 255,
   },
 });
 

@@ -7,6 +7,9 @@ export const tableHead = {
 };
 
 export const tableCell = {
+  root: {
+    padding: 10,
+  },
 	head: {
 		color: '#fff',
 		textTransform: 'uppercase',
