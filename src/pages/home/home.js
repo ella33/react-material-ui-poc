@@ -22,15 +22,24 @@ const Home = ({ listings, history }) => {
     history.push('/listing');
   }, [history]);
 
+  const requestSorting = useCallback((id) => {
+    console.log(id);
+    console.log((order === 'asc') ? 'desc' : 'asc');
+    setOrder(o => ((o === 'asc') ? 'desc' : 'asc'));
+    setOrderBy(id);
+  }, []);
+
   const tableHeaders = [
-    { id: 0, label: 'Upc' },
-    { id: 1, label: 'Description' },
-    { id: 2, label: 'Cm#' },
-    { id: 3, label: 'Time' },
-    { id: 4, label: 'Status' },
-    { id: 5, label: 'Reason' },
-    { id: 6, label: 'Action' },
+    { id: 'upc', label: 'Upc' },
+    { id: 'description', label: 'Description' },
+    { id: 'cm', label: 'Cm#' },
+    { id: 'time', label: 'Time' },
+    { id: 'status', label: 'Status' },
+    { id: 'reason', label: 'Reason' },
+    { id: 'action', label: 'Action' },
   ];
+
+  // TODO
 
   return (
     <>
@@ -56,7 +65,7 @@ const Home = ({ listings, history }) => {
                     <TableSortLabel
                       active={orderBy === id}
                       direction={order}
-                      onClick={() => { console.log('youu') }}
+                      onClick={requestSorting.bind(id)}
                     >
                       {label}
                     </TableSortLabel>
@@ -66,17 +75,19 @@ const Home = ({ listings, history }) => {
             </SbyTableHead>
 
             <SbyTableBody>
-              {listings.map(listing => (
-                <SbyTableRow key={listing.id}>
-                  <SbyTableCell>{listing.upc}</SbyTableCell>
-                  <SbyTableCell>{listing.description}</SbyTableCell>
-                  <SbyTableCell>{listing.cm}</SbyTableCell>
-                  <SbyTableCell>{listing.time}</SbyTableCell>
-                  <SbyTableCell>{listing.status}</SbyTableCell>
-                  <SbyTableCell>{listing.reason}</SbyTableCell>
-                  <SbyTableCell><Button color="primary" onClick={resumeListing}><ReplayIcon />RESUME</Button></SbyTableCell>
-                </SbyTableRow>
-              ))}
+              {listings.sort((a, b) => ((order === 'asc') ?  (a[orderBy] < b[orderBy] ? 1 : -1) : (a[orderBy] > b[orderBy] ? 1: -1)))
+                .map(listing => (
+                  <SbyTableRow key={listing.id}>
+                    <SbyTableCell>{listing.upc}</SbyTableCell>
+                    <SbyTableCell>{listing.description}</SbyTableCell>
+                    <SbyTableCell>{listing.cm}</SbyTableCell>
+                    <SbyTableCell>{listing.time}</SbyTableCell>
+                    <SbyTableCell>{listing.status}</SbyTableCell>
+                    <SbyTableCell>{listing.reason}</SbyTableCell>
+                    <SbyTableCell><Button color="primary" onClick={resumeListing}><ReplayIcon />RESUME</Button></SbyTableCell>
+                  </SbyTableRow>
+                ))
+              }
             </SbyTableBody>
           </SbyTable>
         </Box>
