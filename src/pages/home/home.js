@@ -7,7 +7,7 @@ import TableSortLabel from '@material-ui/core/TableSortLabel';
 
 import SbyActionBar, { ActionGroup } from 'components/shared/actionBar';
 import SbySubheader from 'components/shared/subheader';
-import { SbyTable, SbyTableHead, SbyTableBody, SbyTableRow, SbyTableCell } from 'components/table';
+import { SbyTable, SbyTableHead, SbyTableBody, SbyTableRow, SbyTableCell, SbyTabelSortIcon } from 'components/table';
 import SbyPaper from 'components/paper';
 import SbyButton from 'components/button';
 
@@ -23,8 +23,6 @@ const Home = ({ listings, history }) => {
   }, [history]);
 
   const requestSorting = useCallback((id) => {
-    console.log(id);
-    console.log((order === 'asc') ? 'desc' : 'asc');
     setOrder(o => ((o === 'asc') ? 'desc' : 'asc'));
     setOrderBy(id);
   }, []);
@@ -38,8 +36,6 @@ const Home = ({ listings, history }) => {
     { id: 'reason', label: 'Reason' },
     { id: 'action', label: 'Action' },
   ];
-
-  // TODO
 
   return (
     <>
@@ -65,7 +61,8 @@ const Home = ({ listings, history }) => {
                     <TableSortLabel
                       active={orderBy === id}
                       direction={order}
-                      onClick={requestSorting.bind(id)}
+                      onClick={() => requestSorting(id)}
+                      IconComponent={SbyTabelSortIcon}
                     >
                       {label}
                     </TableSortLabel>

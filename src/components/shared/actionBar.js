@@ -9,7 +9,7 @@ const ActionBar = styled('div')(({ theme }) => ({
 	borderBottom: `2px solid ${theme.palette.primary.main}`,
 	display: 'flex',
 	color: '#fff',
-	height: `${theme.spacing(12)}px`,
+	height: theme.spacing(12),
 	justifyContent: 'space-between',
 	padding: `${theme.spacing(2)}px ${theme.spacing(4)}px`,
 }));
