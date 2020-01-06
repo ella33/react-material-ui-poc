@@ -10,9 +10,10 @@ import SbySubheader from 'components/shared/subheader';
 import { SbyTable, SbyTableHead, SbyTableBody, SbyTableRow, SbyTableCell, SbyTabelSortIcon } from 'components/table';
 import SbyPaper from 'components/paper';
 import SbyButton from 'components/button';
+import listings from 'mocks/listings';
 
 const Home = ({ listings, history }) => {
-  const [orderBy, setOrderBy] = useState('');
+  const [orderBy, setOrderBy] = useState('status');
   const [order, setOrder] = useState('asc');
   const goToNewListing = useCallback(() => {
     history.push('/new-listing');
@@ -33,8 +34,8 @@ const Home = ({ listings, history }) => {
     { id: 'cm', label: 'Cm#' },
     { id: 'time', label: 'Time' },
     { id: 'status', label: 'Status' },
-    { id: 'reason', label: 'Reason' },
-    { id: 'action', label: 'Action' },
+    { id: 'reason', label: 'Reason', sortable: false },
+    { id: 'action', label: 'Action', sortable: false },
   ];
 
   return (
@@ -53,19 +54,23 @@ const Home = ({ listings, history }) => {
           <SbyTable aria-label="Listings table">
             <SbyTableHead>
               <SbyTableRow>
-                {tableHeaders.map(({ id, label }) => (
+                {tableHeaders.map(({ id, label, sortable = true }) => (
                   <SbyTableCell
                     key={id}
                     sortDirection={orderBy === id ? order : false}
                   >
-                    <TableSortLabel
-                      active={orderBy === id}
-                      direction={order}
-                      onClick={() => requestSorting(id)}
-                      IconComponent={SbyTabelSortIcon}
-                    >
-                      {label}
-                    </TableSortLabel>
+                    {sortable ?
+                      (
+                        <TableSortLabel
+                          active={orderBy === id}
+                          direction={orderBy === id ? order : 'asc'}
+                          onClick={() => requestSorting(id)}
+                          IconComponent={SbyTabelSortIcon}
+                        >
+                          {label}
+                        </TableSortLabel>
+                      ) : <>{label}</>
+                    }
                   </SbyTableCell>
                 ))}
               </SbyTableRow>
@@ -94,15 +99,7 @@ const Home = ({ listings, history }) => {
 };
 
 Home.defaultProps = {
-  listings: Array(5).fill(null).map((_, index) => ({
-    id: index,
-    upc: '10882875096107',
-    description: 'ClubHous Gravy Mix Org Lorem ipsum dolor sit amet',
-    cm: 4489,
-    time: '2018-11-29',
-    status: (index === 3) ? 'REJECTED' : 'ON HOLD',
-    reason: 'Reason provided by the clerk lorem ipsum',
-  })),
+  listings,
 };
 
 export default withRouter(React.memo(Home));

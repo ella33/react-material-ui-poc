@@ -40,7 +40,7 @@ export const SbyTableCell = ({ children, ...rest }) => (
 
 export const SbyTabelSortIcon = (props) => (
   <Grid container direction="column" {...props}>
-    <KeyboardArrowUp />
-    <KeyboardArrowDown />
+    <KeyboardArrowUp color="primary" className="sb-arrow-up" />
+    <KeyboardArrowDown color="primary" className="sb-arrow-down" />
   </Grid>
 );

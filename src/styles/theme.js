@@ -6,7 +6,7 @@ import radioStyles from './radio';
 import dropdownStyles from './dropdown';
 import toggleButtonStyles from './toggleButton';
 import linkStyles from './link';
-import { tableHead, tableCell } from './table';
+import { tableHead, tableCell, tableSortLabel } from './table';
 
 const spacingBaseUnit = 5;
 
@@ -57,6 +57,9 @@ const theme = createMuiTheme({
     },
     MuiTableCell: {
       ...tableCell,
+    },
+    MuiTableSortLabel: {
+      ...tableSortLabel,
     },
     MuiToggleButtonGroup: {
       ...toggleButtonStyles,

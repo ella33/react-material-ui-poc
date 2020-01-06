@@ -24,6 +24,23 @@ export const tableCell = {
 		},
 		'&.MuiTableCell-head': {
 			padding: '10px 0',
-		}
+    },
 	},
+};
+
+export const tableSortLabel = {
+  root: {
+    '&.MuiTableSortLabel-active, &:hover': {
+      color: 'inherit',
+    },
+  },
+  icon: {
+    transition: 'none',
+  },
+  iconDirectionDesc: {
+    transform: 'none',
+  },
+  iconDirectionAsc: {
+    transform: 'none',
+  },
 };

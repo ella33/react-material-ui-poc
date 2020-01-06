@@ -14,6 +14,8 @@ const Content = styled('div')({
   display: 'flex',
   flex: 1,
   flexDirection: 'column',
+  minWidth: 1024,
+  overflow: 'auto',
 });
 
 const SbyLayout = ({ children }) => (

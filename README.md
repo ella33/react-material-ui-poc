@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+The project is a POC built with React Material UI. It uses entirely mock data. There are 3 pages available:
+- Home
+- Next listing page (accesible via WORK ON YOUR NEXT LISTING button)
+- Resume page (accesible via RESUME button).
+
 ## Available Scripts
 
 In the project directory, you can run:
