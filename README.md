@@ -5,6 +5,8 @@ The project is a POC built with React Material UI. It uses entirely mock data. T
 - Next listing page (accesible via WORK ON YOUR NEXT LISTING button)
 - Resume page (accesible via RESUME button).
 
+Deployed at: https://react-material-poc.netlify.app/
+
 ## Available Scripts
 
 In the project directory, you can run:
